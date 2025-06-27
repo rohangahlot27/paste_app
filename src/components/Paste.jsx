@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFromPastes } from '../redux/pasteSlice';
 import toast from 'react-hot-toast';
-import ClipboardCopy from 'lucide-react/dist/esm/icons/clipboard-copy.js';
-import Eye from 'lucide-react/dist/esm/icons/eye.js';
-import Pencil from 'lucide-react/dist/esm/icons/pencil.js';
-import Share2 from 'lucide-react/dist/esm/icons/share-2.js';
-import Trash2 from 'lucide-react/dist/esm/icons/trash-2.js';
 
+// React Icons
+import {
+  FaClipboard,
+  FaEye,
+  FaPencilAlt,
+  FaShareSquare,
+  FaTrash,
+} from 'react-icons/fa';
 
 const Paste = () => {
   const pastes = useSelector((state) => state.paste.pastes);
@@ -42,20 +45,20 @@ const Paste = () => {
 
                 <div className="flex flex-row gap-5 justify-start items-center text-blue-600">
                   <a href={`/?pasteId=${paste?._id}`} title="Edit">
-                    <Pencil className="cursor-pointer hover:text-blue-800" />
+                    <FaPencilAlt className="cursor-pointer hover:text-blue-800" />
                   </a>
 
-                  <Trash2
+                  <FaTrash
                     title="Delete"
                     className="cursor-pointer hover:text-red-600"
                     onClick={() => handleDelete(paste?._id)}
                   />
 
                   <a href={`/pastes/${paste?._id}`} title="View">
-                    <Eye className="cursor-pointer hover:text-green-600" />
+                    <FaEye className="cursor-pointer hover:text-green-600" />
                   </a>
 
-                  <ClipboardCopy
+                  <FaClipboard
                     title="Copy"
                     className="cursor-pointer hover:text-purple-600"
                     onClick={() => {
@@ -64,7 +67,7 @@ const Paste = () => {
                     }}
                   />
 
-                  <Share2
+                  <FaShareSquare
                     title="Share"
                     className="cursor-pointer hover:text-pink-600"
                     onClick={() => {
