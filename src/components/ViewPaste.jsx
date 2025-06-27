@@ -2,8 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
-import { ClipboardCopy } from 'lucide-react';
-
+import { FaRegClipboard } from 'react-icons/fa';
 
 const ViewPaste = () => {
   const { id } = useParams();
@@ -31,7 +30,7 @@ const ViewPaste = () => {
         />
       </div>
 
-      <div className="mt-4">
+      <div className="mt-4 relative">
         <textarea
           disabled
           value={paste.content}
@@ -40,16 +39,17 @@ const ViewPaste = () => {
           className="rounded-xl w-full min-h-[300px] p-4 border border-gray-300 bg-gray-50 text-gray-800 font-mono focus:outline-none focus:ring-2 focus:ring-gray-400"
         />
 
-         <button
-    onClick={handleCopy}
-    className="p-2 rounded-full bg-blue-600 hover:bg-blue-700 transition duration-200 text-white"
-    title="Copy Code"
-  >
-    <ClipboardCopy className="w-6 h-6" />
-  </button>
+        <button
+          onClick={handleCopy}
+          className="absolute top-4 right-4 p-2 rounded-full bg-blue-600 hover:bg-blue-700 transition duration-200 text-white"
+          title="Copy Code"
+        >
+          <FaRegClipboard className="w-5 h-5" />
+        </button>
       </div>
     </div>
   );
 };
 
 export default ViewPaste;
+
