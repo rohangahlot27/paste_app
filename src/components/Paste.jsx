@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFromPastes } from '../redux/pasteSlice';
 import toast from 'react-hot-toast';
-import {
-  ClipboardCopy,
-  Eye,
-  Pencil,
-  Share2,
-  Trash2,
-} from 'lucide-react'; // Import icons
+import ClipboardCopy from 'lucide-react/dist/esm/icons/clipboard-copy.js';
+import Eye from 'lucide-react/dist/esm/icons/eye.js';
+import Pencil from 'lucide-react/dist/esm/icons/pencil.js';
+import Share2 from 'lucide-react/dist/esm/icons/share-2.js';
+import Trash2 from 'lucide-react/dist/esm/icons/trash-2.js';
+
 
 const Paste = () => {
   const pastes = useSelector((state) => state.paste.pastes);
